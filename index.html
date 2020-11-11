@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note taker !</title>
+    <style media="screen">
+    *{
+      background-color: ;
+    }
+      h1{
+        text-align: center;
+        font-family: cursive;
+      }
+      textarea
+{
+  height:auto;
+  display:block;
+  resize:vertical-auto; /* enables vertical height due to size of contained text */
+  width:50%;
+  height: 80px;
+  padding-left: ;
+  box-sizing: content-box;
+  font-size: 20px;
+}
+.div{
+  text-align: left;
+  padding-right: 100px;
+}
+#info{
+  text-align:left;
+  font-family:cursive;
+  color: "light grey";
+}
+#in{
+  font-family:cursive;
+}
+    </style>
+</head>
+<body>
+   <h1>Note taker !</h1>
+ <br>
+ <p id="info"></p>
+ <button type="button" name="button" id="in" onclick="myfunction2()" ondblclick="myfunction3()">Info</button>
+ <br>
+ <div  style="text-align:center;font-family:center;padding-left:410px;" class="">
+
+  <div class="div">
+     <input type="date" id="input" name="" value=""><input type="time" name="" value="" id="time"> </div><textarea id="textarea" name="name" rows="2" cols="33" placeholder="Enter events(character limit - 200)" maxlength="250"></textarea>
+  </div>
+  <button type="button" name="button" onclick="myfunction()" style="font-family:cursive;text-align:center;">Enter</button>
+  <button type="button" name="button" onclick="myfunction1()">Clear Events</button>
+  <p style=":text-align:center;font-family:cursive;font-size:25px;background-color:rgb(201, 201, 201)" id="para"></p>
+</body>
+<script type="text/javascript">
+// ale javascript code goes here
+// declaring variables and assigning HTML elements to variables
+var text = document.getElementById("textarea");
+var p = document.getElementById("para");
+var input = document.getElementById("input");
+var time = document.getElementById("time");
+let info = document.getElementById("info");
+// creating the function for input to displayed
+function myfunction(){
+  para = document.createElement("p");
+  para.innerText = input.value+"("+time.value+")"+":"+" "+text.value;
+  p.appendChild(para);
+  text.value = " ";
+  input.value = " ";
+  time.value = " ";
+}
+function myfunction1(){
+  p.innerText= " ";
+}
+para.addEventListener("click",function(){
+  para.style.textDecoration ="line-through";
+})
+para.addEventListener("dblclick",function(){
+  p.removeChild(para);
+})
+
+function myfunction2(){
+   info.innerHTML  = "Use this app to write down all your important date . dblclick on the button to hide info";
+}
+function myfunction3(){
+  info.innerHTML = " ";
+}
+// subscribe Nayak's tech hub 
+</script>
+</html>
